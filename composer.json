@@ -1,6 +1,6 @@
 {
     "name": "danc0/runq",
-    "type": "project",
+    "type": "library",
     "description": "A PHP query runner.",
     "authors": [
         {
