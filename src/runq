@@ -1,0 +1,58 @@
+#! /usr/bin/php
+<?php
+if (php_sapi_name() !== 'cli') {
+    exit;
+}
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+use Clyde\Application;
+use Clyde\Args\Arg_Flag;
+use Clyde\Commands\Command;
+use Clyde\Tools\Emoji;
+use Runq\Actions\Create_Action;
+use Runq\Actions\Init_Action;
+use Runq\Actions\Revert_Action;
+use Runq\Actions\Run_Action;
+use Runq\Actions\Run_All_Action;
+
+define('ROOT', getcwd());
+define('APP_ROOT', __DIR__);
+
+Application::create('runq')
+	->author(Emoji::ALIEN_MONSTER . ' runq')
+	->about('A PHP query runner')
+	->version(Emoji::GREEN_BOX_WITH_CHECKMARK . ' v1.0.0')
+	->helpTemplate(APP_ROOT . '/App/templates/help.txt')
+	// Add Commands
+	->command(
+		Command::create('init')
+			->about('Initialize a runq configuration file')
+			->action(Init_Action::class)
+			->save()
+	)
+	->command(
+		Command::create('create')
+			->about('Create a new query file template')
+			->action(Create_Action::class)
+			->save()
+	)
+	->command(
+		Command::create('run <file>')
+			->about('Run a query file')
+			->action(Run_Action::class)
+			->save()
+	)
+	->command(
+		Command::create('run-all')
+			->about('Run all query files')
+			->action(Run_All_Action::class)
+			->save()
+	)
+	->command(
+		Command::create('revert <file>')
+			->about('Revert a query file run')
+			->action(Revert_Action::class)
+			->save()
+	)
+	->run();
