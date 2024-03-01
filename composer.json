@@ -9,7 +9,7 @@
         }
     ],
 	"bin": [
-		"bin/runq"
+		"src/bin/runq"
 	],
     "license": "Unlicense",
     "config": {
