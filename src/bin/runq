@@ -5,6 +5,5 @@ namespace Composer;
 if (php_sapi_name() !== 'cli') {
     exit;
 }
-include $_composer_autoload_path ?? __DIR__ . '/../vendor/autoload.php';
 
-include __DIR__ . '/../runq';
+include realpath(__DIR__ . '/../runq');
