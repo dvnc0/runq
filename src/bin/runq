@@ -6,4 +6,4 @@ if (php_sapi_name() !== 'cli') {
     exit;
 }
 
-include realpath(__DIR__ . '/../runq');
+include __DIR__ . '/../runq';
