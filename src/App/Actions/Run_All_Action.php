@@ -24,6 +24,9 @@ class Run_All_Action extends Runq_Action {
 		$files = array_diff($files, $processed);
 
 		foreach ($files as $file) {
+			if (strpos($file, '.yml') === false) {
+				continue;
+			}
 			$file_path = $config['query_file_path'] . '/' . $file;
 
 			if (!file_exists($file_path)) {
@@ -45,7 +48,9 @@ class Run_All_Action extends Runq_Action {
 				$error = $database->errorInfo();
 
 				if ($error[0] !== '00000') {
-					$database->rollBack();
+					if ($database->inTransaction()) {
+						$database->rollBack();
+					}
 					$this->Printer->error('Error running query: ' . $error[2]);
 					$this->exitNow(1);
 				}
@@ -54,7 +59,9 @@ class Run_All_Action extends Runq_Action {
 					$database->commit();
 				}
 			} catch (PDOException $e) {
-				$database->rollBack();
+				if ($database->inTransaction()) {
+					$database->rollBack();
+				}
 				$this->Printer->error('Error running query: ' . $e->getMessage());
 				$this->exitNow(1);
 			}
