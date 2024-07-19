@@ -22,7 +22,7 @@
     },
     "require": {
         "php": ">=8.0",
-        "danc0/clyde": "^0.5.4",
+        "danc0/clyde": ">=0.5.4",
         "symfony/yaml": "^7.0"
     },
    "require-dev": {

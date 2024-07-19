@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b29c0f7802355c03287044ef38265399",
+    "content-hash": "3618365ade271035d9263bcbe82d752a",
     "packages": [
         {
             "name": "danc0/clyde",
-            "version": "v0.5.7",
+            "version": "v0.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dvnc0/clyde.git",
-                "reference": "4820276ae17779887d08885321da3206d72f8130"
+                "reference": "ff0602f283ecbf3703d1a8172f186b0ea37f3212"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dvnc0/clyde/zipball/4820276ae17779887d08885321da3206d72f8130",
-                "reference": "4820276ae17779887d08885321da3206d72f8130",
+                "url": "https://api.github.com/repos/dvnc0/clyde/zipball/ff0602f283ecbf3703d1a8172f186b0ea37f3212",
+                "reference": "ff0602f283ecbf3703d1a8172f186b0ea37f3212",
                 "shasum": ""
             },
             "require": {
@@ -48,9 +48,9 @@
             "description": "Your friendly neighborhood CLI framework.",
             "support": {
                 "issues": "https://github.com/dvnc0/clyde/issues",
-                "source": "https://github.com/dvnc0/clyde/tree/v0.5.7"
+                "source": "https://github.com/dvnc0/clyde/tree/v0.7.1"
             },
-            "time": "2023-08-29T04:28:37+00:00"
+            "time": "2024-07-18T05:22:27+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
